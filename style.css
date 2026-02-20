@@ -345,6 +345,47 @@ section h2 {
 }
 
 /* ============================================================
+   TOP.GG WIDGET
+   ============================================================ */
+.topgg-widget {
+  text-align: center;
+  margin: 2rem auto 0;
+  padding: 1.5rem;
+  max-width: 400px;
+}
+
+.topgg-widget h3 {
+  font-size: 1.1rem;
+  color: #7289da;
+  margin: 0 0 0.4rem;
+  font-weight: bold;
+}
+
+.topgg-widget p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin: 0 0 1rem;
+}
+
+.topgg-widget a {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.topgg-widget img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(114, 137, 218, 0.3);
+  transition: all 0.3s ease;
+}
+
+.topgg-widget img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(114, 137, 218, 0.6), 0 0 50px rgba(153, 169, 255, 0.4);
+}
+
+/* ============================================================
    FEATURE CARDS
    ============================================================ */
 .feature-cards {
@@ -671,5 +712,6 @@ footer .social a:hover {
   header#hero { padding: 7rem 1rem 4rem; }
   .server-count { padding: 1.5rem 1.25rem; }
   .count-number { font-size: 2.5rem; }
+  .topgg-widget { padding: 1rem; }
 }
 
