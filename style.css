@@ -715,3 +715,65 @@ footer .social a:hover {
   .topgg-widget { padding: 1rem; }
 }
 
+
+/* ============================================================
+   SECTION INTRO & MORE-LINK
+   ============================================================ */
+.section-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: -1rem auto 2rem;
+  color: #bbb;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.section-more-link {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+.hero-desc {
+  font-size: 1rem;
+  opacity: 0.85;
+  max-width: 600px;
+  margin: 0 auto 1rem;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   SUBPAGE LAYOUT
+   ============================================================ */
+.page-hero {
+  padding: 8rem 1.5rem 3rem;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(114,137,218,0.15), rgba(17,17,34,0.9));
+  border-bottom: 1px solid rgba(114,137,218,0.2);
+}
+.page-hero h1 {
+  font-size: 2.5rem;
+  color: #99a9ff;
+  text-shadow: 0 0 15px rgba(153,169,255,0.5);
+  margin-bottom: 0.5rem;
+}
+.page-hero p {
+  color: #bbb;
+  font-size: 1.05rem;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.page-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+.breadcrumb {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+.breadcrumb a {
+  color: #7289da;
+  text-decoration: none;
+}
+.breadcrumb a:hover { color: #99a9ff; }
+.breadcrumb span { margin: 0 0.4rem; }

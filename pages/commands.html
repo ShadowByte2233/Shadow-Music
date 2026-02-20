@@ -1,32 +1,31 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-i18n-title="page.commands.title">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shadow Music Bot</title>
-  <link rel="icon" type="image/png" href="images/Shadow Music Avatar.png">
-  <link rel="stylesheet" href="style.css">
+  <title>Commands – Shadow Music</title>
+  <link rel="icon" type="image/png" href="../images/Shadow Music Avatar.png">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
 <!-- NAVIGATION -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="#hero" class="nav-logo">
-      <img src="images/Shadow Music Avatar.png" alt="Shadow Music Logo">
+    <a href="../index.html" class="nav-logo">
+      <img src="../images/Shadow Music Avatar.png" alt="Shadow Music Logo">
       <span>Shadow Music</span>
     </a>
     <button class="burger" id="burger" aria-label="Navigation öffnen" data-i18n-aria="nav.burgerLabel">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#hero" data-i18n="nav.home">Startseite</a></li>
-      <li><a href="#commands" data-i18n="nav.commands">Commands</a></li>
-      <li><a href="#datenschutz" data-i18n="nav.privacy">Datenschutz</a></li>
-      <li><a href="#terms" data-i18n="nav.terms">Terms of Use</a></li>
-      <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
+      <li><a href="../index.html#hero" data-i18n="nav.home">Startseite</a></li>
+      <li><a href="commands.html" data-i18n="nav.commands">Commands</a></li>
+      <li><a href="privacy.html" data-i18n="nav.privacy">Datenschutz</a></li>
+      <li><a href="terms.html" data-i18n="nav.terms">Terms of Use</a></li>
+      <li><a href="contact.html" data-i18n="nav.contact">Kontakt</a></li>
     </ul>
-    <!-- Language toggle -->
     <div class="lang-toggle" id="lang-toggle">
       <button class="lang-btn active" data-lang="de">DE</button>
       <button class="lang-btn" data-lang="en">EN</button>
@@ -34,68 +33,20 @@
   </div>
 </nav>
 
-<!-- HERO SECTION -->
-<header id="hero">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <img src="images/Shadow Music Avatar.png" alt="Shadow Music Avatar" class="hero-avatar">
-    <h1 id="bot-name">Shadow Music</h1>
-    <p class="slogan" data-i18n="hero.slogan">Dein ultimativer Discord-Musik-Bot – alles, was du brauchst!</p>
-    <p class="hero-desc" data-i18n="hero.description"></p>
-    <div class="hero-buttons">
-      <a class="btn" href="https://discord.com/oauth2/authorize?client_id=1471191946025242786&scope=bot%20applications.commands" target="_blank" data-i18n="hero.invite">Bot einladen</a>
-      <a class="btn small" href="https://discord.gg/22gbpjtxtw" target="_blank" data-i18n="hero.support">Support Server</a>
-    </div>
-  </div>
-</header>
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <h1 data-i18n="page.commands.heading">Alle Commands</h1>
+  <p data-i18n="page.commands.intro">Eine vollständige Übersicht aller verfügbaren Slash-Commands von Shadow Music. Nutze /help im Bot für eine direkte Übersicht im Discord.</p>
+</div>
 
-<!-- STATS / SERVER COUNTER SECTION -->
-<section id="stats">
-  <div class="topgg-widget reveal">
-    <h3>🌐 Shadow Music Stats</h3>
-    <p data-i18n="stats.widgetVote">Vote für Shadow Music auf top.gg!</p>
-    <a href="https://top.gg/bot/1471191946025242786" target="_blank" rel="noopener noreferrer">
-      <img src="https://top.gg/api/widget/1471191946025242786.svg" alt="Vote for Shadow Music on top.gg!">
-    </a>
-  </div>
-</section>
+<!-- CONTENT -->
+<div class="page-content">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../index.html" data-i18n="nav.home">Startseite</a>
+    <span>›</span>
+    <span data-i18n="nav.commands">Commands</span>
+  </nav>
 
-<!-- FEATURES SECTION -->
-<section id="features">
-  <h2 data-i18n="features.title">Features</h2>
-  <p class="section-intro" data-i18n="features.intro"></p>
-  <div class="feature-cards">
-    <div class="card">
-      <h3 data-i18n="features.basics.title">Grundfunktionen</h3>
-      <ul>
-        <li data-i18n="features.basics.li1">Abspielen, Pausieren, Skippen</li>
-        <li data-i18n="features.basics.li2">Playlist-Unterstützung</li>
-      </ul>
-      <p data-i18n="features.basics.desc"></p>
-    </div>
-    <div class="card">
-      <h3 data-i18n="features.equalizer.title">Equalizer</h3>
-      <p data-i18n="features.equalizer.desc">/equalizer für personalisierten Sound</p>
-    </div>
-    <div class="card">
-      <h3 data-i18n="features.voice.title">Voice Messages</h3>
-      <p data-i18n="features.voice.desc">/listen Command reagiert auf Voice Messages</p>
-    </div>
-    <div class="card">
-      <h3 data-i18n="features.recommended.title">Song Empfehlungen</h3>
-      <p data-i18n="features.recommended.desc">/recommended Songs basierend auf deinem Geschmack</p>
-    </div>
-    <div class="card">
-      <h3 data-i18n="features.import.title">Playlist Import</h3>
-      <p data-i18n="features.import.desc">Import von Spotify, SoundCloud &amp; YouTube</p>
-    </div>
-  </div>
-</section>
-
-<!-- COMMANDS SECTION -->
-<section id="commands">
-  <h2 data-i18n="commands.title">Commands</h2>
-  <p class="section-intro" data-i18n="commands.intro"></p>
   <div class="commands-categories">
 
     <!-- Musik-Playback -->
@@ -233,75 +184,17 @@
     </div>
 
   </div>
-  <div class="section-more-link">
-    <a href="pages/commands.html" class="btn small" data-i18n="commands.moreLink">Alle Commands ansehen →</a>
-  </div>
-</section>
-
-<!-- CALL TO ACTION -->
-<section id="cta">
-  <h2 data-i18n="cta.title">Jetzt Shadow Music einladen</h2>
-  <a class="btn" href="https://discord.com/oauth2/authorize?client_id=1471191946025242786&scope=bot%20applications.commands" target="_blank" data-i18n="cta.invite">Bot einladen</a>
-  <a class="btn small" href="https://discord.gg/22gbpjtxtw" target="_blank" data-i18n="cta.support">Support Server</a>
-</section>
-
-<!-- TERMS SECTION -->
-<section id="terms">
-  <h2 data-i18n="terms.title">Terms of Use</h2>
-  <div class="legal-content" data-i18n-html="terms.content">
-    <p><strong>Nutzungsbedingungen für Shadow Music</strong></p>
-    <p>Durch die Nutzung von Shadow Music erklärst du dich damit einverstanden, die folgenden Bedingungen einzuhalten:</p>
-    <p>1. <strong>Berechtigte Nutzung:</strong> Du darfst den Bot ausschließlich auf Discord-Servern einsetzen, für die du die entsprechende Berechtigung besitzt. Eine Nutzung auf Servern, auf denen du nicht autorisiert bist, ist untersagt.</p>
-    <p>2. <strong>Haftungsausschluss des Entwicklers:</strong> Der Entwickler von Shadow Music übernimmt keine Verantwortung für Verstöße gegen die Discord-Nutzungsbedingungen oder andere rechtliche Vorschriften. Du bist allein für die rechtmäßige Nutzung des Bots verantwortlich.</p>
-    <p>3. Wir Shadow Music behalten uns das Recht vor, den Bot von dem Server zu entfernen, wenn wir ungewöhnliche Aktivitäten bemerken, und leiten ggf. Verstöße an das Discord Safety Team weiter. Auch hier gilt die Einhaltung der ToS von Discord.</p>
-  </div>
-  <div class="section-more-link">
-    <a href="pages/terms.html" class="btn small" data-i18n="terms.moreLink">Vollständige Nutzungsbedingungen →</a>
-  </div>
-</section>
-
-<!-- PRIVACY SECTION -->
-<section id="datenschutz">
-  <h2 data-i18n="privacy.title">Datenschutz</h2>
-  <div class="legal-content" data-i18n-html="privacy.content">
-    <h3>1. Allgemeine Hinweise</h3>
-    <p>Der Schutz deiner persönlichen Daten ist uns sehr wichtig.</p>
-  </div>
-  <div class="section-more-link">
-    <a href="pages/privacy.html" class="btn small" data-i18n="privacy.moreLink">Vollständige Datenschutzerklärung →</a>
-  </div>
-</section>
-
-<!-- CONTACT SECTION -->
-<section id="contact">
-  <h2 data-i18n="contact.title">Kontakt</h2>
-  <p class="section-intro" data-i18n="contact.intro"></p>
-  <div class="contact-cards">
-    <a class="contact-card" href="https://discord.gg/22gbpjtxtw" target="_blank">
-      <div class="contact-icon">💬</div>
-      <div class="contact-label" data-i18n="contact.discord.label">Discord Support Server</div>
-      <div class="contact-value">discord.gg/22gbpjtxtw</div>
-    </a>
-    <a class="contact-card" href="mailto:shadowbyte2233@gmail.com">
-      <div class="contact-icon">✉️</div>
-      <div class="contact-label" data-i18n="contact.email.label">Email</div>
-      <div class="contact-value">shadowbyte2233@gmail.com</div>
-    </a>
-  </div>
-  <div class="section-more-link">
-    <a href="pages/contact.html" class="btn small" data-i18n="contact.moreLink">Zur Kontaktseite →</a>
-  </div>
-</section>
+</div>
 
 <!-- FOOTER -->
 <footer>
-  <p data-i18n="footer.copyright">&copy; 2026 Shadow Music</p>
+  <p data-i18n="footer.copyright">© 2026 Shadow Music</p>
   <div class="social">
     <a href="https://discord.gg/22gbpjtxtw" target="_blank">Discord</a>
     <a href="https://github.com/ShadowByte2233" target="_blank">GitHub</a>
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="../script.js"></script>
 </body>
 </html>
