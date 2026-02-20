@@ -248,6 +248,103 @@ section h2 {
 }
 
 /* ============================================================
+   STATS / SERVER COUNTER SECTION
+   ============================================================ */
+#stats {
+  text-align: center;
+  background: #1b1b28;
+  padding: 3rem 1.5rem;
+}
+
+.server-count {
+  display: inline-block;
+  background: rgba(44, 44, 61, 0.8);
+  border: 1px solid rgba(114, 137, 218, 0.3);
+  border-radius: 16px;
+  padding: 2rem 3rem;
+  max-width: 420px;
+  width: 100%;
+}
+
+.live-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.live-dot {
+  width: 10px;
+  height: 10px;
+  background: #4ade80;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: livePulse 2s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+  0%, 100% { box-shadow: 0 0 4px #4ade80; opacity: 0.8; }
+  50%       { box-shadow: 0 0 12px #4ade80, 0 0 20px rgba(74,222,128,0.4); opacity: 1; }
+}
+
+.live-text {
+  font-size: 0.78rem;
+  font-weight: bold;
+  color: #4ade80;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.stats-title {
+  font-size: 1.1rem;
+  color: #7289da;
+  margin: 0 0 0.75rem;
+  font-weight: bold;
+}
+
+.count-number {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #99a9ff;
+  margin: 0.25rem 0 0.5rem;
+  line-height: 1;
+  animation: counterGlow 3s ease-in-out infinite;
+}
+
+@keyframes counterGlow {
+  0%, 100% { text-shadow: 0 0 20px rgba(153,169,255,0.6), 0 0 40px rgba(153,169,255,0.3); }
+  50%       { text-shadow: 0 0 30px rgba(153,169,255,0.9), 0 0 60px rgba(153,169,255,0.5); }
+}
+
+.count-label {
+  font-size: 1rem;
+  color: #ccc;
+  margin: 0.25rem 0 1.5rem;
+}
+
+.btn-topgg {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: transparent;
+  color: #99a9ff;
+  border: 1px solid rgba(114, 137, 218, 0.5);
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-topgg:hover {
+  background: rgba(114, 137, 218, 0.2);
+  border-color: #7289da;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(114, 137, 218, 0.5);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
    FEATURE CARDS
    ============================================================ */
 .feature-cards {
@@ -572,5 +669,7 @@ footer .social a:hover {
 @media (max-width: 600px) {
   #bot-name { font-size: 2rem; }
   header#hero { padding: 7rem 1rem 4rem; }
+  .server-count { padding: 1.5rem 1.25rem; }
+  .count-number { font-size: 2.5rem; }
 }
 

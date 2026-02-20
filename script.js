@@ -72,6 +72,11 @@ const translations = {
     "cmd.playlist_load.params": '<span class="param">name</span> – Name der Playlist',
     "cmd.playlist_delete.params": '<span class="param">name</span> – Name der Playlist',
     "cmd.equalizer.params": '<span class="param">preset</span> – bass / treble / flat / pop / rock',
+    // Stats
+    "stats.title": "🌐 Live Server Count",
+    "stats.live": "Live",
+    "stats.label": "Server nutzen Shadow Music",
+    "stats.vote": "Vote auf top.gg",
     // CTA
     "cta.title": "Jetzt Shadow Music einladen",
     "cta.invite": "Bot einladen",
@@ -186,6 +191,11 @@ const translations = {
     "cmd.playlist_load.params": '<span class="param">name</span> – Playlist name',
     "cmd.playlist_delete.params": '<span class="param">name</span> – Playlist name',
     "cmd.equalizer.params": '<span class="param">preset</span> – bass / treble / flat / pop / rock',
+    // Stats
+    "stats.title": "🌐 Live Server Count",
+    "stats.live": "Live",
+    "stats.label": "Servers use Shadow Music",
+    "stats.vote": "Vote on top.gg",
     // CTA
     "cta.title": "Invite Shadow Music Now",
     "cta.invite": "Invite Bot",
@@ -385,5 +395,62 @@ document.addEventListener("DOMContentLoaded", () => {
     li.textContent = translations[currentLang]['features.dynamic'];
     featureList[0].appendChild(li);
   }
+
+  /* ------------------------------------------------------------------
+     SERVER COUNT – top.gg API with count-up animation
+  ------------------------------------------------------------------ */
+  fetchServerCount();
 });
+
+/* ==============================================================
+   COUNT-UP ANIMATION HELPER
+   ============================================================== */
+/**
+ * Animates a number counting up from 0 to `target` over `duration` ms.
+ * @param {HTMLElement} el      - Element whose textContent is updated.
+ * @param {number}      target  - Final value to count up to.
+ * @param {number}      duration - Animation duration in milliseconds.
+ * @param {string}      [suffix=''] - Optional suffix appended after the number (e.g. '+').
+ */
+function countUp(el, target, duration, suffix) {
+  suffix = suffix || '';
+  const startTime = performance.now();
+  function update(currentTime) {
+    const progress = Math.min((currentTime - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    el.textContent = Math.round(target * eased).toLocaleString() + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+/* ==============================================================
+   FETCH SERVER COUNT FROM top.gg
+   ============================================================== */
+/**
+ * Attempts to fetch the live server count from the top.gg API.
+ * Falls back to a static placeholder if the API is unreachable (e.g. CORS / no API key).
+ */
+function fetchServerCount() {
+  const el = document.getElementById('server-count');
+  if (!el) return;
+
+  const BOT_ID = '1471191946025242786';
+  const FALLBACK_COUNT = 500;
+
+  fetch('https://top.gg/api/bots/' + BOT_ID + '/stats')
+    .then(function(res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
+    .then(function(data) {
+      const count = (data && data.server_count) ? data.server_count : FALLBACK_COUNT;
+      console.log('[Shadow Music] Server count from top.gg: ' + count);
+      countUp(el, count, 2000);
+    })
+    .catch(function(err) {
+      console.log('[Shadow Music] top.gg API not reachable, using fallback. (' + err.message + ')');
+      countUp(el, FALLBACK_COUNT, 1500, '+');
+    });
+}
 
