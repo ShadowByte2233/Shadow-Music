@@ -14,10 +14,13 @@ const translations = {
     "nav.burgerLabel": "Navigation öffnen",
     // Hero
     "hero.slogan": "Dein ultimativer Discord-Musik-Bot – alles, was du brauchst!",
+    "hero.description": "Shadow Music ist dein leistungsstarker Discord-Musikbot mit Equalizer, Playlist-Import aus Spotify, YouTube & SoundCloud sowie smarter Song-Empfehlungsfunktion. Kostenfrei, zuverlässig und immer für dich da.",
     "hero.invite": "Bot einladen",
     "hero.support": "Support Server",
     // Features
     "features.title": "Features",
+    "features.intro": "Shadow Music bringt professionelle Musikwiedergabe direkt auf deinen Discord-Server – mit Features, die kein anderer Bot bietet.",
+    "features.basics.desc": "Steuere die Wiedergabe intuitiv per Slash-Command – von Abspielen über Pausieren bis hin zum Skippen ganzer Tracks.",
     "features.basics.title": "Grundfunktionen",
     "features.basics.li1": "Abspielen, Pausieren, Skippen",
     "features.basics.li2": "Playlist-Unterstützung",
@@ -32,6 +35,8 @@ const translations = {
     "features.dynamic": "Dynamisches Feature hinzugefügt ⚡",
     // Commands
     "commands.title": "Commands",
+    "commands.intro": "Alle Slash-Commands auf einen Blick. Shadow Music unterstützt eine Vielzahl von Befehlen für Wiedergabe, Warteschlange, Playlists und Einstellungen.",
+    "commands.moreLink": "Alle Commands ansehen →",
     "commands.cat.playback": "🎵 Musik-Playback",
     "commands.cat.queue": "📋 Queue / Warteschlange",
     "commands.cat.playlists": "🎶 Playlists",
@@ -77,6 +82,7 @@ const translations = {
     "stats.live": "Live",
     "stats.label": "Server nutzen Shadow Music",
     "stats.vote": "Vote auf top.gg",
+    "stats.widgetVote": "Vote für Shadow Music auf top.gg!",
     // CTA
     "cta.title": "Jetzt Shadow Music einladen",
     "cta.invite": "Bot einladen",
@@ -116,10 +122,25 @@ const translations = {
 <p>Wir setzen Verschlüsselung, Zugangsbeschränkungen und regelmäßige Backups ein, um deine Daten zu schützen.</p>
 <h3>8. Änderungen</h3>
 <p>Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen. Mit der Nutzung des Bots erklärst du dich mit der Datenverarbeitung gemäß dieser Erklärung einverstanden.</p>`,
+    // Privacy / Terms more-links
+    "privacy.moreLink": "Vollständige Datenschutzerklärung →",
+    "terms.moreLink": "Vollständige Nutzungsbedingungen →",
     // Contact
     "contact.title": "Kontakt",
+    "contact.intro": "Du hast Fragen, Feedback oder ein Problem? Kontaktiere uns jederzeit über Discord oder per E-Mail – wir helfen gerne!",
+    "contact.moreLink": "Zur Kontaktseite →",
     "contact.discord.label": "Discord Support Server",
     "contact.email.label": "Email",
+    // Subpage titles & headings
+    "page.commands.title": "Commands – Shadow Music",
+    "page.commands.heading": "Alle Commands",
+    "page.commands.intro": "Eine vollständige Übersicht aller verfügbaren Slash-Commands von Shadow Music. Nutze /help im Bot für eine direkte Übersicht im Discord.",
+    "page.privacy.title": "Datenschutz – Shadow Music",
+    "page.terms.title": "Terms of Use – Shadow Music",
+    "page.contact.title": "Kontakt – Shadow Music",
+    "page.contact.heading": "Kontakt",
+    "page.contact.intro": "Wir sind für dich da! Ob du Hilfe benötigst, Feedback teilen oder einfach in Kontakt treten möchtest – nutze einen der folgenden Wege.",
+    "nav.pages": "Seiten",
     // Footer
     "footer.copyright": "© 2026 Shadow Music",
   },
@@ -133,10 +154,13 @@ const translations = {
     "nav.burgerLabel": "Open navigation",
     // Hero
     "hero.slogan": "Your ultimate Discord music bot – everything you need!",
+    "hero.description": "Shadow Music is your powerful Discord music bot featuring a built-in equalizer, playlist import from Spotify, YouTube & SoundCloud, and smart song recommendations. Free, reliable, and always there for you.",
     "hero.invite": "Invite Bot",
     "hero.support": "Support Server",
     // Features
     "features.title": "Features",
+    "features.intro": "Shadow Music brings professional music playback directly to your Discord server – with features no other bot offers.",
+    "features.basics.desc": "Control playback intuitively via slash commands – from playing and pausing to skipping entire tracks.",
     "features.basics.title": "Basic Functions",
     "features.basics.li1": "Play, Pause, Skip",
     "features.basics.li2": "Playlist support",
@@ -151,6 +175,8 @@ const translations = {
     "features.dynamic": "Dynamic feature added ⚡",
     // Commands
     "commands.title": "Commands",
+    "commands.intro": "All slash commands at a glance. Shadow Music supports a wide range of commands for playback, queue management, playlists, and settings.",
+    "commands.moreLink": "View all commands →",
     "commands.cat.playback": "🎵 Music Playback",
     "commands.cat.queue": "📋 Queue",
     "commands.cat.playlists": "🎶 Playlists",
@@ -235,10 +261,25 @@ const translations = {
 <p>We use encryption, access restrictions, and regular backups to protect your data.</p>
 <h3>8. Changes</h3>
 <p>This privacy policy may be updated as needed. By using the bot, you consent to the data processing described herein.</p>`,
+    // Privacy / Terms more-links
+    "privacy.moreLink": "Full Privacy Policy →",
+    "terms.moreLink": "Full Terms of Use →",
     // Contact
     "contact.title": "Contact",
+    "contact.intro": "Have questions, feedback, or an issue? Reach us anytime via Discord or email – we're happy to help!",
+    "contact.moreLink": "Go to contact page →",
     "contact.discord.label": "Discord Support Server",
     "contact.email.label": "Email",
+    // Subpage titles & headings
+    "page.commands.title": "Commands – Shadow Music",
+    "page.commands.heading": "All Commands",
+    "page.commands.intro": "A complete overview of all available slash commands for Shadow Music. Use /help in the bot for a direct overview in Discord.",
+    "page.privacy.title": "Privacy Policy – Shadow Music",
+    "page.terms.title": "Terms of Use – Shadow Music",
+    "page.contact.title": "Contact – Shadow Music",
+    "page.contact.heading": "Contact",
+    "page.contact.intro": "We're here for you! Whether you need help, want to share feedback, or simply want to get in touch – use one of the following channels.",
+    "nav.pages": "Pages",
     // Footer
     "footer.copyright": "© 2026 Shadow Music",
   }
@@ -278,6 +319,13 @@ function applyTranslations(lang) {
   // Update <html lang="…"> attribute
   document.documentElement.lang = lang;
 
+  // Update <title> if data-i18n-title is set on <html>
+  const htmlEl = document.documentElement;
+  if (htmlEl.dataset.i18nTitle) {
+    const titleKey = htmlEl.dataset.i18nTitle;
+    if (t[titleKey] !== undefined) document.title = t[titleKey];
+  }
+
   // Highlight the active language button
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
@@ -316,25 +364,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.getElementById("nav-links");
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 40) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
+    if (navbar) {
+      if (window.scrollY > 40) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
     }
   });
 
-  burger.addEventListener("click", () => {
-    burger.classList.toggle("open");
-    navLinks.classList.toggle("open");
-  });
+  if (burger) {
+    burger.addEventListener("click", () => {
+      burger.classList.toggle("open");
+      navLinks.classList.toggle("open");
+    });
+  }
 
   // Close mobile menu when a link is clicked
-  navLinks.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      burger.classList.remove("open");
-      navLinks.classList.remove("open");
+  if (navLinks) {
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        if (burger) burger.classList.remove("open");
+        navLinks.classList.remove("open");
+      });
     });
-  });
+  }
 
   /* ------------------------------------------------------------------
      SMOOTH SCROLL for nav links (offset for fixed navbar)
@@ -344,7 +398,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const target = document.querySelector(anchor.getAttribute("href"));
       if (!target) return;
       e.preventDefault();
-      const navHeight = navbar.offsetHeight;
+      const navHeight = navbar ? navbar.offsetHeight : 0;
       const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
       window.scrollTo({ top, behavior: "smooth" });
     });
