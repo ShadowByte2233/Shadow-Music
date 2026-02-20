@@ -1,0 +1,70 @@
+/* style.css */
+body {
+  font-family: Arial, sans-serif;
+  margin:0; padding:0;
+  background: #1e1e2f;
+  color:#fff;
+  scroll-behavior: smooth;
+}
+
+header#hero {
+  text-align:center;
+  padding:5rem 1rem;
+  background: linear-gradient(135deg,#7289da,#99a9ff);
+  animation: gradient 10s ease infinite;
+}
+@keyframes gradient {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
+
+#bot-name {
+  font-size:3rem;
+  font-weight:bold;
+  animation: typing 2s steps(20) forwards;
+}
+@keyframes typing {
+  from {width:0;}
+  to {width:100%;}
+}
+
+.slogan {margin:1rem 0; font-size:1.2rem;}
+.btn {
+  display:inline-block;
+  padding:0.8rem 1.5rem;
+  background:#7289da;
+  color:#fff;
+  border-radius:5px;
+  text-decoration:none;
+  transition:all 0.3s ease;
+  margin-top:1rem;
+}
+.btn:hover {box-shadow:0 0 20px #7289da; transform:scale(1.05);}
+
+section {padding:4rem 1rem;}
+.feature-cards {display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;}
+.card {
+  background:#2c2c3d; padding:1rem; border-radius:10px; width:250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {transform:scale(1.05); box-shadow:0 0 15px #7289da;}
+
+.screenshots {display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;}
+.screenshots img {width:250px; border-radius:10px;}
+
+#cta {text-align:center; background:#292941; padding:4rem 1rem;}
+.btn.small {background:#5b6eae; margin-left:1rem;}
+
+#legal {background:#1b1b28; padding:4rem 1rem;}
+#legal h2 {margin-top:1rem; color:#7289da;}
+
+footer {
+  background:#111122;
+  text-align:center;
+  padding:2rem 1rem;
+}
+footer .social a {
+  color:#7289da; margin:0 0.5rem; text-decoration:none;
+}
+footer .social a:hover {text-decoration:underline;}
