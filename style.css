@@ -383,12 +383,17 @@ section h2 {
 /* ============================================================
    LEGAL
    ============================================================ */
-#legal {
+#terms {
   background: #1b1b28;
   padding: 4rem 1.5rem;
 }
-#legal h2 {
-  margin-top: 1rem;
+#datenschutz {
+  background: #22223a;
+  padding: 4rem 1.5rem;
+}
+#terms h2,
+#datenschutz h2 {
+  margin-top: 0;
   color: #7289da;
 }
 
@@ -476,7 +481,70 @@ footer .social a:hover {
 }
 
 /* ============================================================
-   RESPONSIVE
+   LANGUAGE TOGGLE
+   ============================================================ */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-left: 1rem;
+  flex-shrink: 0;
+}
+.lang-btn {
+  background: none;
+  border: 1px solid rgba(114, 137, 218, 0.4);
+  color: #ccc;
+  font-size: 0.78rem;
+  font-weight: bold;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  letter-spacing: 0.04em;
+}
+.lang-btn.active {
+  background: #7289da;
+  color: #fff;
+  border-color: #7289da;
+}
+.lang-btn:hover:not(.active) {
+  color: #fff;
+  border-color: #99a9ff;
+}
+
+/* ============================================================
+   LEGAL CONTENT
+   ============================================================ */
+.legal-content {
+  max-width: 860px;
+  margin: 0 auto;
+  line-height: 1.75;
+  color: #ccc;
+}
+.legal-content h3 {
+  color: #99a9ff;
+  margin-top: 1.5rem;
+  margin-bottom: 0.4rem;
+  font-size: 1.1rem;
+}
+.legal-content h4 {
+  color: #7289da;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+.legal-content p {
+  margin-bottom: 0.8rem;
+}
+.legal-content a {
+  color: #99a9ff;
+}
+.legal-content a:hover {
+  color: #fff;
+}
+
+/* ============================================================
+   RESPONSIVE – language toggle
    ============================================================ */
 @media (max-width: 768px) {
   .burger { display: flex; }
