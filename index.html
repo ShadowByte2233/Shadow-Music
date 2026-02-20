@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shadow Music Bot</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadow Music Bot</title>
+  <link rel="icon" type="image/png" href="images/Shadow Music Avatar.png">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <img src="images/Shadow Music Avatar.png" alt="Shadow Music Logo">
+      <span>Shadow Music</span>
+    </a>
+    <button class="burger" id="burger" aria-label="Navigation öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero">Startseite</a></li>
+      <li><a href="#commands">Commands</a></li>
+      <li><a href="#datenschutz">Datenschutz</a></li>
+      <li><a href="#terms">Terms of Use</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
 <!-- HERO SECTION -->
 <header id="hero">
-  <h1 id="bot-name">Shadow Music</h1>
-  <p class="slogan">Dein ultimativer Discord-Musik-Bot – alles, was du brauchst!</p>
-  <a class="btn" href="https://discord.com/oauth2/authorize?client_id=DEIN_CLIENT_ID&scope=bot" target="_blank">Bot einladen</a>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <img src="images/Shadow Music Avatar.png" alt="Shadow Music Avatar" class="hero-avatar">
+    <h1 id="bot-name">Shadow Music</h1>
+    <p class="slogan">Dein ultimativer Discord-Musik-Bot – alles, was du brauchst!</p>
+    <div class="hero-buttons">
+      <a class="btn" href="https://discord.com/oauth2/authorize?client_id=1471191946025242786&scope=bot%20applications.commands" target="_blank">Bot einladen</a>
+      <a class="btn small" href="https://discord.gg/22gbpjtxtw" target="_blank">Support Server</a>
+    </div>
+  </div>
 </header>
 
 <!-- FEATURES SECTION -->
@@ -40,47 +68,199 @@
     </div>
     <div class="card">
       <h3>Playlist Import</h3>
-      <p>Import von Spotify, SoundCloud & YouTube</p>
+      <p>Import von Spotify, SoundCloud &amp; YouTube</p>
     </div>
   </div>
 </section>
 
-<!-- DEMO / SCREENSHOTS SECTION -->
-<section id="demo">
-  <h2>Demo</h2>
-  <div class="screenshots">
-    <img src="demo1.png" alt="Bot Screenshot 1">
-    <img src="demo2.png" alt="Bot Screenshot 2">
-    <img src="demo3.png" alt="Bot Screenshot 3">
+<!-- COMMANDS SECTION -->
+<section id="commands">
+  <h2>Commands</h2>
+  <div class="commands-categories">
+
+    <!-- Musik-Playback -->
+    <div class="cmd-category">
+      <h3 class="cmd-cat-title">🎵 Musik-Playback</h3>
+      <div class="cmd-cards">
+        <div class="cmd-card">
+          <div class="cmd-name">/play</div>
+          <div class="cmd-desc">Spielt einen Song oder eine URL ab</div>
+          <div class="cmd-params"><span class="param">query</span> – Song-Name oder URL</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/pause</div>
+          <div class="cmd-desc">Pausiert die aktuelle Wiedergabe</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/resume</div>
+          <div class="cmd-desc">Setzt die Wiedergabe fort</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/stop</div>
+          <div class="cmd-desc">Stoppt die Wiedergabe und verlässt den Voice-Channel</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/skip</div>
+          <div class="cmd-desc">Überspringt den aktuellen Song</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/nowplaying</div>
+          <div class="cmd-desc">Zeigt den aktuell gespielten Song an</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/volume</div>
+          <div class="cmd-desc">Lautstärke einstellen</div>
+          <div class="cmd-params"><span class="param">level</span> – Lautstärke (1–100)</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/seek</div>
+          <div class="cmd-desc">Springt zu einer bestimmten Position im Song</div>
+          <div class="cmd-params"><span class="param">position</span> – Zeit in Sekunden</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/listen</div>
+          <div class="cmd-desc">Reagiert auf Discord Voice Messages und spielt sie ab</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Queue / Warteschlange -->
+    <div class="cmd-category">
+      <h3 class="cmd-cat-title">📋 Queue / Warteschlange</h3>
+      <div class="cmd-cards">
+        <div class="cmd-card">
+          <div class="cmd-name">/queue</div>
+          <div class="cmd-desc">Zeigt die aktuelle Song-Warteschlange an</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/clear</div>
+          <div class="cmd-desc">Leert die gesamte Warteschlange</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/shuffle</div>
+          <div class="cmd-desc">Mischt die Warteschlange zufällig durch</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/remove</div>
+          <div class="cmd-desc">Entfernt einen Song aus der Warteschlange</div>
+          <div class="cmd-params"><span class="param">index</span> – Position in der Queue</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/loop</div>
+          <div class="cmd-desc">Wiederholt den aktuellen Song oder die Queue</div>
+          <div class="cmd-params"><span class="param">mode</span> – off / song / queue</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Playlists -->
+    <div class="cmd-category">
+      <h3 class="cmd-cat-title">🎶 Playlists</h3>
+      <div class="cmd-cards">
+        <div class="cmd-card">
+          <div class="cmd-name">/playlist create</div>
+          <div class="cmd-desc">Erstellt eine neue persönliche Playlist</div>
+          <div class="cmd-params"><span class="param">name</span> – Name der Playlist</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/playlist add</div>
+          <div class="cmd-desc">Fügt einen Song zur Playlist hinzu</div>
+          <div class="cmd-params"><span class="param">name</span> – Playlist · <span class="param">song</span> – Song-URL oder Name</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/playlist load</div>
+          <div class="cmd-desc">Lädt eine Playlist in die Queue</div>
+          <div class="cmd-params"><span class="param">name</span> – Name der Playlist</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/playlist list</div>
+          <div class="cmd-desc">Zeigt alle gespeicherten Playlists an</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/playlist delete</div>
+          <div class="cmd-desc">Löscht eine bestehende Playlist</div>
+          <div class="cmd-params"><span class="param">name</span> – Name der Playlist</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Einstellungen -->
+    <div class="cmd-category">
+      <h3 class="cmd-cat-title">⚙️ Einstellungen</h3>
+      <div class="cmd-cards">
+        <div class="cmd-card">
+          <div class="cmd-name">/equalizer</div>
+          <div class="cmd-desc">Passt den Equalizer für personalisierten Sound an</div>
+          <div class="cmd-params"><span class="param">preset</span> – bass / treble / flat / pop / rock</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/recommended</div>
+          <div class="cmd-desc">Gibt Song-Empfehlungen basierend auf dem aktuellen Song</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/disconnect</div>
+          <div class="cmd-desc">Trennt den Bot vom Voice-Channel</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/ping</div>
+          <div class="cmd-desc">Zeigt die Latenz des Bots an</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/help</div>
+          <div class="cmd-desc">Zeigt alle verfügbaren Commands und deren Beschreibung</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- CALL TO ACTION -->
 <section id="cta">
   <h2>Jetzt Shadow Music einladen</h2>
-  <a class="btn" href="https://discord.com/oauth2/authorize?client_id=DEIN_CLIENT_ID&scope=bot" target="_blank">Bot einladen</a>
-  <a class="btn small" href="https://discord.gg/DEIN_SUPPORT_SERVER" target="_blank">Support Server</a>
+  <a class="btn" href="https://discord.com/oauth2/authorize?client_id=1471191946025242786&scope=bot%20applications.commands" target="_blank">Bot einladen</a>
+  <a class="btn small" href="https://discord.gg/22gbpjtxtw" target="_blank">Support Server</a>
 </section>
 
-<!-- TERMS OF USE & DATENSCHUTZ -->
+<!-- LEGAL SECTION -->
 <section id="legal">
-  <h2>Terms of Use</h2>
-  <p>Durch die Nutzung von Shadow Music akzeptierst du die folgenden Bedingungen: 
-     Du darfst den Bot nur auf Discord-Servern verwenden, für die du berechtigt bist. 
-     Der Entwickler übernimmt keine Verantwortung für Verstöße gegen Discord Richtlinien.</p>
-  
-  <h2>Datenschutz</h2>
-  <p>Shadow Music speichert keine persönlichen Daten der Benutzer. 
-     Lediglich Discord-ID und Server-ID werden temporär verarbeitet, um Commands auszuführen. 
-     Es werden keine Daten an Dritte weitergegeben.</p>
+  <div id="terms">
+    <h2>Terms of Use</h2>
+    <p>Durch die Nutzung von Shadow Music akzeptierst du die folgenden Bedingungen:
+       Du darfst den Bot nur auf Discord-Servern verwenden, für die du berechtigt bist.
+       Der Entwickler übernimmt keine Verantwortung für Verstöße gegen Discord-Richtlinien.</p>
+  </div>
+  <div id="datenschutz">
+    <h2>Datenschutz</h2>
+    <p>Shadow Music speichert keine persönlichen Daten der Benutzer.
+       Lediglich Discord-ID und Server-ID werden temporär verarbeitet, um Commands auszuführen.
+       Es werden keine Daten an Dritte weitergegeben.</p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact">
+  <h2>Kontakt</h2>
+  <div class="contact-cards">
+    <a class="contact-card" href="https://discord.gg/22gbpjtxtw" target="_blank">
+      <div class="contact-icon">💬</div>
+      <div class="contact-label">Discord Support Server</div>
+      <div class="contact-value">discord.gg/22gbpjtxtw</div>
+    </a>
+    <a class="contact-card" href="mailto:shadowbyte2233@gmail.com">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-label">Email</div>
+      <div class="contact-value">shadowbyte2233@gmail.com</div>
+    </a>
+  </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <p>&copy; 2026 Shadow Music</p>
   <div class="social">
-    <a href="https://discord.gg/DEIN_SUPPORT_SERVER" target="_blank">Discord</a>
-    <a href="https://github.com/DEIN_GITHUB" target="_blank">GitHub</a>
+    <a href="https://discord.gg/22gbpjtxtw" target="_blank">Discord</a>
+    <a href="https://github.com/ShadowByte2233" target="_blank">GitHub</a>
   </div>
 </footer>
 
