@@ -768,6 +768,37 @@ footer .social a:hover {
 }
 
 /* ============================================================
+   FEATURED IMAGE CARDS (index.html)
+   ============================================================ */
+#featured-commands {
+  background: #1b1b28;
+}
+.featured-img-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.featured-img-card {
+  max-width: 280px;
+  flex: 1 1 220px;
+  text-align: center;
+}
+.cmd-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  border: 1px solid rgba(114,137,218,0.2);
+}
+@media (max-width: 768px) {
+  .featured-img-cards { flex-direction: column; align-items: center; }
+  .featured-img-card { max-width: 100%; }
+}
+
+/* ============================================================
    SUBPAGE LAYOUT
    ============================================================ */
 .page-hero {

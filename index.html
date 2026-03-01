@@ -21,10 +21,10 @@
     </button>
     <ul class="nav-links" id="nav-links">
       <li><a href="#hero" data-i18n="nav.home">Startseite</a></li>
-      <li><a href="#commands" data-i18n="nav.commands">Commands</a></li>
-      <li><a href="#datenschutz" data-i18n="nav.privacy">Datenschutz</a></li>
-      <li><a href="#terms" data-i18n="nav.terms">Terms of Use</a></li>
-      <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
+      <li><a href="pages/commands.html" data-i18n="nav.commands">Commands</a></li>
+      <li><a href="pages/privacy.html" data-i18n="nav.privacy">Datenschutz</a></li>
+      <li><a href="pages/terms.html" data-i18n="nav.terms">Terms of Use</a></li>
+      <li><a href="pages/contact.html" data-i18n="nav.contact">Kontakt</a></li>
     </ul>
     <!-- Language toggle -->
     <div class="lang-toggle" id="lang-toggle">
@@ -60,210 +60,26 @@
   </div>
 </section>
 
-<!-- FEATURES SECTION -->
-<section id="features">
-  <h2 data-i18n="features.title">Features</h2>
-  <p class="section-intro" data-i18n="features.intro"></p>
-  <div class="feature-cards">
-    <div class="card">
-      <h3 data-i18n="features.basics.title">Grundfunktionen</h3>
-      <ul>
-        <li data-i18n="features.basics.li1">Abspielen, Pausieren, Skippen</li>
-        <li data-i18n="features.basics.li2">Playlist-Unterstützung</li>
-      </ul>
-      <p data-i18n="features.basics.desc"></p>
+<!-- FEATURED COMMANDS -->
+<section id="featured-commands">
+  <h2 data-i18n="commands.featured.title">⭐ Featured Commands</h2>
+  <p class="section-intro" data-i18n="featuredCmds.intro">Eine Auswahl unserer beliebtesten Commands.</p>
+  <div class="cmd-cards featured-img-cards">
+    <div class="cmd-card featured-img-card">
+      <img src="images/listening_comand.png" alt="/listen command" class="cmd-img">
+      <div class="cmd-name">/listen</div>
+      <div class="cmd-desc" data-i18n="cmd.listen.desc">Reagiert auf Discord Voice Messages und spielt sie ab</div>
     </div>
-    <div class="card">
-      <h3 data-i18n="features.equalizer.title">Equalizer</h3>
-      <p data-i18n="features.equalizer.desc">/equalizer für personalisierten Sound</p>
+    <div class="cmd-card featured-img-card">
+      <img src="images/recomended_songs.jpeg" alt="/recommended command" class="cmd-img">
+      <div class="cmd-name">/recommended</div>
+      <div class="cmd-desc" data-i18n="cmd.recommended.desc">Gibt Song-Empfehlungen basierend auf dem aktuellen Song</div>
     </div>
-    <div class="card">
-      <h3 data-i18n="features.voice.title">Voice Messages</h3>
-      <p data-i18n="features.voice.desc">/listen Command reagiert auf Voice Messages</p>
+    <div class="cmd-card featured-img-card">
+      <img src="images/shuffle_comand.png" alt="/shuffle command" class="cmd-img">
+      <div class="cmd-name">/shuffle</div>
+      <div class="cmd-desc" data-i18n="cmd.shuffle.desc">Mischt die Warteschlange zufällig durch</div>
     </div>
-    <div class="card">
-      <h3 data-i18n="features.recommended.title">Song Empfehlungen</h3>
-      <p data-i18n="features.recommended.desc">/recommended Songs basierend auf deinem Geschmack</p>
-    </div>
-    <div class="card">
-      <h3 data-i18n="features.import.title">Playlist Import</h3>
-      <p data-i18n="features.import.desc">Import von Spotify, SoundCloud &amp; YouTube</p>
-    </div>
-  </div>
-</section>
-
-<!-- COMMANDS SECTION -->
-<section id="commands">
-  <h2 data-i18n="commands.title">Commands</h2>
-  <p class="section-intro" data-i18n="commands.intro"></p>
-
-  <!-- Featured Commands -->
-  <div class="featured-commands">
-    <h3 class="featured-cmd-title" data-i18n="commands.featured.title">⭐ Featured Commands</h3>
-    <div class="cmd-cards">
-      <div class="cmd-card">
-        <div class="cmd-name">/play</div>
-        <div class="cmd-desc" data-i18n="cmd.play.desc">Spielt einen Song oder eine URL ab</div>
-      </div>
-      <div class="cmd-card">
-        <div class="cmd-name">/import_playlist</div>
-        <div class="cmd-desc" data-i18n="cmd.import_playlist.desc">Importiert eine Playlist von Spotify, YouTube oder SoundCloud</div>
-      </div>
-      <div class="cmd-card">
-        <div class="cmd-name">/listen</div>
-        <div class="cmd-desc" data-i18n="cmd.listen.desc">Reagiert auf Discord Voice Messages und spielt sie ab</div>
-      </div>
-      <div class="cmd-card">
-        <div class="cmd-name">/equalizer</div>
-        <div class="cmd-desc" data-i18n="cmd.equalizer.desc">Passt den Equalizer für personalisierten Sound an</div>
-      </div>
-      <div class="cmd-card">
-        <div class="cmd-name">/playlist save &amp; /playlist load</div>
-        <div class="cmd-desc" data-i18n="cmd.playlist_save_and_load.desc">Playlists speichern und in die Queue laden</div>
-      </div>
-      <div class="cmd-card">
-        <div class="cmd-name">/lyrics</div>
-        <div class="cmd-desc" data-i18n="cmd.lyrics.desc">Zeigt den Songtext des aktuell gespielten Songs an</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="commands-categories">
-
-    <!-- Musik-Playback -->
-    <div class="cmd-category">
-      <h3 class="cmd-cat-title" data-i18n="commands.cat.playback">🎵 Musik-Playback</h3>
-      <div class="cmd-cards">
-        <div class="cmd-card">
-          <div class="cmd-name">/play</div>
-          <div class="cmd-desc" data-i18n="cmd.play.desc">Spielt einen Song oder eine URL ab</div>
-          <div class="cmd-params" data-i18n-html="cmd.play.params"><span class="param">query</span> – Song-Name oder URL</div>
-        </div>
-        <div class="cmd-card">
-          <div class="cmd-name">/pause</div>
-          <div class="cmd-desc" data-i18n="cmd.pause.desc">Pausiert die aktuelle Wiedergabe</div>
-        </div>
-        <div class="cmd-card">
-          <div class="cmd-name">/resume</div>
-          <div class="cmd-desc" data-i18n="cmd.resume.desc">Setzt die Wiedergabe fort</div>
-        </div>
-        <div class="cmd-card">
-          <div class="cmd-name">/stop</div>
-          <div class="cmd-desc" data-i18n="cmd.stop.desc">Stoppt die Wiedergabe und verlässt den Voice-Channel</div>
-        </div>
-        <div class="cmd-card">
-          <div class="cmd-name">/skip</div>
-          <div class="cmd-desc" data-i18n="cmd.skip.desc">Überspringt den aktuellen Song</div>
-        </div>
-        <div class="cmd-card">
-          <div class="cmd-name">/nowplaying</div>
-          <div class="cmd-desc" data-i18n="cmd.nowplaying.desc">Zeigt den aktuell gespielten Song an</div>
-        </div>
-        <div class="cmd-card">
-          <div class="cmd-name">/volume</div>
-          <div class="cmd-desc" data-i18n="cmd.volume.desc">Lautstärke einstellen</div>
-          <div class="cmd-params" data-i18n-html="cmd.volume.params"><span class="param">level</span> – Lautstärke (1–100)</div>
-        </div>
-        <div class="cmd-card">
-          <div class="cmd-name">/seek</div>
-          <div class="cmd-desc" data-i18n="cmd.seek.desc">Springt zu einer bestimmten Position im Song</div>
-          <div class="cmd-params" data-i18n-html="cmd.seek.params"><span class="param">position</span> – Zeit in Sekunden</div>
-        </div>
-        <div class="cmd-card">
-          <div class="cmd-name">/listen</div>
-          <div class="cmd-desc" data-i18n="cmd.listen.desc">Reagiert auf Discord Voice Messages und spielt sie ab</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Queue / Warteschlange -->
-    <div class="cmd-category">
-      <h3 class="cmd-cat-title" data-i18n="commands.cat.queue">📋 Queue / Warteschlange</h3>
-      <div class="cmd-cards">
-        <div class="cmd-card">
-          <div class="cmd-name">/queue</div>
-          <div class="cmd-desc" data-i18n="cmd.queue.desc">Zeigt die aktuelle Song-Warteschlange an</div>
-        </div>
-        <div class="cmd-card">
-          <div class="cmd-name">/clear</div>
-          <div class="cmd-desc" data-i18n="cmd.clear.desc">Leert die gesamte Warteschlange</div>
-        </div>
-        <div class="cmd-card">
-          <div class="cmd-name">/shuffle</div>
-          <div class="cmd-desc" data-i18n="cmd.shuffle.desc">Mischt die Warteschlange zufällig durch</div>
-        </div>
-        <div class="cmd-card">
-          <div class="cmd-name">/remove</div>
-          <div class="cmd-desc" data-i18n="cmd.remove.desc">Entfernt einen Song aus der Warteschlange</div>
-          <div class="cmd-params" data-i18n-html="cmd.remove.params"><span class="param">index</span> – Position in der Queue</div>
-        </div>
-        <div class="cmd-card">
-          <div class="cmd-name">/loop</div>
-          <div class="cmd-desc" data-i18n="cmd.loop.desc">Wiederholt den aktuellen Song oder die Queue</div>
-          <div class="cmd-params" data-i18n-html="cmd.loop.params"><span class="param">mode</span> – off / song / queue</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Playlists -->
-    <div class="cmd-category">
-      <h3 class="cmd-cat-title" data-i18n="commands.cat.playlists">🎶 Playlists</h3>
-      <div class="cmd-cards">
-        <div class="cmd-card">
-          <div class="cmd-name">/playlist create</div>
-          <div class="cmd-desc" data-i18n="cmd.playlist_create.desc">Erstellt eine neue persönliche Playlist</div>
-          <div class="cmd-params" data-i18n-html="cmd.playlist_create.params"><span class="param">name</span> – Name der Playlist</div>
-        </div>
-        <div class="cmd-card">
-          <div class="cmd-name">/playlist add</div>
-          <div class="cmd-desc" data-i18n="cmd.playlist_add.desc">Fügt einen Song zur Playlist hinzu</div>
-          <div class="cmd-params" data-i18n-html="cmd.playlist_add.params"><span class="param">name</span> – Playlist · <span class="param">song</span> – Song-URL oder Name</div>
-        </div>
-        <div class="cmd-card">
-          <div class="cmd-name">/playlist load</div>
-          <div class="cmd-desc" data-i18n="cmd.playlist_load.desc">Lädt eine Playlist in die Queue</div>
-          <div class="cmd-params" data-i18n-html="cmd.playlist_load.params"><span class="param">name</span> – Name der Playlist</div>
-        </div>
-        <div class="cmd-card">
-          <div class="cmd-name">/playlist list</div>
-          <div class="cmd-desc" data-i18n="cmd.playlist_list.desc">Zeigt alle gespeicherten Playlists an</div>
-        </div>
-        <div class="cmd-card">
-          <div class="cmd-name">/playlist delete</div>
-          <div class="cmd-desc" data-i18n="cmd.playlist_delete.desc">Löscht eine bestehende Playlist</div>
-          <div class="cmd-params" data-i18n-html="cmd.playlist_delete.params"><span class="param">name</span> – Name der Playlist</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Einstellungen -->
-    <div class="cmd-category">
-      <h3 class="cmd-cat-title" data-i18n="commands.cat.settings">⚙️ Einstellungen</h3>
-      <div class="cmd-cards">
-        <div class="cmd-card">
-          <div class="cmd-name">/equalizer</div>
-          <div class="cmd-desc" data-i18n="cmd.equalizer.desc">Passt den Equalizer für personalisierten Sound an</div>
-          <div class="cmd-params" data-i18n-html="cmd.equalizer.params"><span class="param">preset</span> – bass / treble / flat / pop / rock</div>
-        </div>
-        <div class="cmd-card">
-          <div class="cmd-name">/recommended</div>
-          <div class="cmd-desc" data-i18n="cmd.recommended.desc">Gibt Song-Empfehlungen basierend auf dem aktuellen Song</div>
-        </div>
-        <div class="cmd-card">
-          <div class="cmd-name">/disconnect</div>
-          <div class="cmd-desc" data-i18n="cmd.disconnect.desc">Trennt den Bot vom Voice-Channel</div>
-        </div>
-        <div class="cmd-card">
-          <div class="cmd-name">/ping</div>
-          <div class="cmd-desc" data-i18n="cmd.ping.desc">Zeigt die Latenz des Bots an</div>
-        </div>
-        <div class="cmd-card">
-          <div class="cmd-name">/help</div>
-          <div class="cmd-desc" data-i18n="cmd.help.desc">Zeigt alle verfügbaren Commands und deren Beschreibung</div>
-        </div>
-      </div>
-    </div>
-
   </div>
   <div class="section-more-link">
     <a href="pages/commands.html" class="btn small" data-i18n="commands.moreLink">Alle Commands ansehen →</a>
@@ -277,57 +93,8 @@
   <a class="btn small" href="https://discord.gg/22gbpjtxtw" target="_blank" data-i18n="cta.support">Support Server</a>
 </section>
 
-<!-- TERMS SECTION -->
-<section id="terms">
-  <h2 data-i18n="terms.title">Terms of Use</h2>
-  <div class="legal-content" data-i18n-html="terms.content">
-    <p><strong>Nutzungsbedingungen für Shadow Music</strong></p>
-    <p>Durch die Nutzung von Shadow Music erklärst du dich damit einverstanden, die folgenden Bedingungen einzuhalten:</p>
-    <p>1. <strong>Berechtigte Nutzung:</strong> Du darfst den Bot ausschließlich auf Discord-Servern einsetzen, für die du die entsprechende Berechtigung besitzt. Eine Nutzung auf Servern, auf denen du nicht autorisiert bist, ist untersagt.</p>
-    <p>2. <strong>Haftungsausschluss des Entwicklers:</strong> Der Entwickler von Shadow Music übernimmt keine Verantwortung für Verstöße gegen die Discord-Nutzungsbedingungen oder andere rechtliche Vorschriften. Du bist allein für die rechtmäßige Nutzung des Bots verantwortlich.</p>
-    <p>3. Wir Shadow Music behalten uns das Recht vor, den Bot von dem Server zu entfernen, wenn wir ungewöhnliche Aktivitäten bemerken, und leiten ggf. Verstöße an das Discord Safety Team weiter. Auch hier gilt die Einhaltung der ToS von Discord.</p>
-  </div>
-  <div class="section-more-link">
-    <a href="pages/terms.html" class="btn small" data-i18n="terms.moreLink">Vollständige Nutzungsbedingungen →</a>
-  </div>
-</section>
-
-<!-- PRIVACY SECTION -->
-<section id="datenschutz">
-  <h2 data-i18n="privacy.title">Datenschutz</h2>
-  <div class="legal-content" data-i18n-html="privacy.content">
-    <h3>1. Allgemeine Hinweise</h3>
-    <p>Der Schutz deiner persönlichen Daten ist uns sehr wichtig.</p>
-  </div>
-  <div class="section-more-link">
-    <a href="pages/privacy.html" class="btn small" data-i18n="privacy.moreLink">Vollständige Datenschutzerklärung →</a>
-  </div>
-</section>
-
-<!-- CONTACT SECTION -->
-<section id="contact">
-  <h2 data-i18n="contact.title">Kontakt</h2>
-  <p class="section-intro" data-i18n="contact.intro"></p>
-  <div class="contact-cards">
-    <a class="contact-card" href="https://discord.gg/22gbpjtxtw" target="_blank">
-      <div class="contact-icon">💬</div>
-      <div class="contact-label" data-i18n="contact.discord.label">Discord Support Server</div>
-      <div class="contact-value">discord.gg/22gbpjtxtw</div>
-    </a>
-    <a class="contact-card" href="mailto:shadowbyte2233@gmail.com">
-      <div class="contact-icon">✉️</div>
-      <div class="contact-label" data-i18n="contact.email.label">Email</div>
-      <div class="contact-value">shadowbyte2233@gmail.com</div>
-    </a>
-  </div>
-  <div class="section-more-link">
-    <a href="pages/contact.html" class="btn small" data-i18n="contact.moreLink">Zur Kontaktseite →</a>
-  </div>
-</section>
-
 <!-- FOOTER -->
 <footer>
-  <p data-i18n="footer.copyright">&copy; 2026 Shadow Music</p>
   <div class="social">
     <a href="https://discord.gg/22gbpjtxtw" target="_blank">Discord</a>
     <a href="https://github.com/ShadowByte2233" target="_blank">GitHub</a>
