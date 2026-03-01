@@ -740,6 +740,34 @@ footer .social a:hover {
 }
 
 /* ============================================================
+   FEATURED COMMANDS SECTION
+   ============================================================ */
+.featured-commands {
+  max-width: 1200px;
+  margin: 0 auto 2.5rem;
+}
+.featured-cmd-title {
+  font-size: 1.3rem;
+  color: #99a9ff;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid rgba(153,169,255,0.4);
+  text-shadow: 0 0 8px rgba(153,169,255,0.4);
+}
+.cmd-prefix-notation {
+  font-size: 0.75rem;
+  color: #888;
+  font-family: sans-serif;
+}
+.cmd-example {
+  font-size: 0.75rem;
+  color: #7289da;
+  font-family: monospace;
+  margin-top: 0.4rem;
+  opacity: 0.85;
+}
+
+/* ============================================================
    SUBPAGE LAYOUT
    ============================================================ */
 .page-hero {

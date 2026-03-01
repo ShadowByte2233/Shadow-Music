@@ -54,9 +54,10 @@
       <h3 class="cmd-cat-title" data-i18n="commands.cat.playback">🎵 Musik-Playback</h3>
       <div class="cmd-cards">
         <div class="cmd-card">
-          <div class="cmd-name">/play</div>
+          <div class="cmd-name">/play &nbsp;<span class="cmd-prefix-notation">m!play</span></div>
           <div class="cmd-desc" data-i18n="cmd.play.desc">Spielt einen Song oder eine URL ab</div>
           <div class="cmd-params" data-i18n-html="cmd.play.params"><span class="param">query</span> – Song-Name oder URL</div>
+          <div class="cmd-example" data-i18n="cmd.play.example">Beispiel: /play Bohemian Rhapsody</div>
         </div>
         <div class="cmd-card">
           <div class="cmd-name">/pause</div>
@@ -91,35 +92,37 @@
         <div class="cmd-card">
           <div class="cmd-name">/listen</div>
           <div class="cmd-desc" data-i18n="cmd.listen.desc">Reagiert auf Discord Voice Messages und spielt sie ab</div>
+          <div class="cmd-example" data-i18n="cmd.listen.example">Beispiel: /listen (dann Voice Message senden)</div>
         </div>
       </div>
     </div>
 
-    <!-- Queue / Warteschlange -->
+    <!-- Steuerung / Sound -->
     <div class="cmd-category">
-      <h3 class="cmd-cat-title" data-i18n="commands.cat.queue">📋 Queue / Warteschlange</h3>
+      <h3 class="cmd-cat-title" data-i18n="commands.cat.control">🎛️ Steuerung / Sound</h3>
       <div class="cmd-cards">
         <div class="cmd-card">
-          <div class="cmd-name">/queue</div>
-          <div class="cmd-desc" data-i18n="cmd.queue.desc">Zeigt die aktuelle Song-Warteschlange an</div>
+          <div class="cmd-name">/equalizer</div>
+          <div class="cmd-desc" data-i18n="cmd.equalizer.desc">Passt den Equalizer für personalisierten Sound an</div>
+          <div class="cmd-params" data-i18n-html="cmd.equalizer.params"><span class="param">preset</span> – bass / treble / flat / pop / rock</div>
+          <div class="cmd-example" data-i18n="cmd.equalizer.example">Beispiel: /equalizer bass</div>
         </div>
         <div class="cmd-card">
-          <div class="cmd-name">/clear</div>
-          <div class="cmd-desc" data-i18n="cmd.clear.desc">Leert die gesamte Warteschlange</div>
+          <div class="cmd-name">/loop</div>
+          <div class="cmd-desc" data-i18n="cmd.loop.desc">Wiederholt den aktuellen Song oder die Queue</div>
+          <div class="cmd-params" data-i18n-html="cmd.loop.params"><span class="param">mode</span> – off / song / queue</div>
         </div>
         <div class="cmd-card">
           <div class="cmd-name">/shuffle</div>
           <div class="cmd-desc" data-i18n="cmd.shuffle.desc">Mischt die Warteschlange zufällig durch</div>
         </div>
         <div class="cmd-card">
-          <div class="cmd-name">/remove</div>
-          <div class="cmd-desc" data-i18n="cmd.remove.desc">Entfernt einen Song aus der Warteschlange</div>
-          <div class="cmd-params" data-i18n-html="cmd.remove.params"><span class="param">index</span> – Position in der Queue</div>
+          <div class="cmd-name">/recommended</div>
+          <div class="cmd-desc" data-i18n="cmd.recommended.desc">Gibt Song-Empfehlungen basierend auf dem aktuellen Song</div>
         </div>
         <div class="cmd-card">
-          <div class="cmd-name">/loop</div>
-          <div class="cmd-desc" data-i18n="cmd.loop.desc">Wiederholt den aktuellen Song oder die Queue</div>
-          <div class="cmd-params" data-i18n-html="cmd.loop.params"><span class="param">mode</span> – off / song / queue</div>
+          <div class="cmd-name">/disconnect</div>
+          <div class="cmd-desc" data-i18n="cmd.disconnect.desc">Trennt den Bot vom Voice-Channel</div>
         </div>
       </div>
     </div>
@@ -142,6 +145,13 @@
           <div class="cmd-name">/playlist load</div>
           <div class="cmd-desc" data-i18n="cmd.playlist_load.desc">Lädt eine Playlist in die Queue</div>
           <div class="cmd-params" data-i18n-html="cmd.playlist_load.params"><span class="param">name</span> – Name der Playlist</div>
+          <div class="cmd-example" data-i18n="cmd.playlist_load.example">Beispiel: /playlist load MeinePlaylist</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/playlist save</div>
+          <div class="cmd-desc" data-i18n="cmd.playlist_save.desc">Speichert die aktuelle Queue als neue Playlist</div>
+          <div class="cmd-params" data-i18n-html="cmd.playlist_save.params"><span class="param">name</span> – Name der neuen Playlist</div>
+          <div class="cmd-example" data-i18n="cmd.playlist_save.example">Beispiel: /playlist save Favorites</div>
         </div>
         <div class="cmd-card">
           <div class="cmd-name">/playlist list</div>
@@ -152,25 +162,35 @@
           <div class="cmd-desc" data-i18n="cmd.playlist_delete.desc">Löscht eine bestehende Playlist</div>
           <div class="cmd-params" data-i18n-html="cmd.playlist_delete.params"><span class="param">name</span> – Name der Playlist</div>
         </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/import_playlist</div>
+          <div class="cmd-desc" data-i18n="cmd.import_playlist.desc">Importiert eine Playlist von Spotify, YouTube oder SoundCloud</div>
+          <div class="cmd-params" data-i18n-html="cmd.import_playlist.params"><span class="param">url</span> – Spotify-, YouTube- oder SoundCloud-URL</div>
+          <div class="cmd-example" data-i18n="cmd.import_playlist.example">Beispiel: /import_playlist https://open.spotify.com/playlist/...</div>
+        </div>
       </div>
     </div>
 
-    <!-- Einstellungen -->
+    <!-- Utilities -->
     <div class="cmd-category">
-      <h3 class="cmd-cat-title" data-i18n="commands.cat.settings">⚙️ Einstellungen</h3>
+      <h3 class="cmd-cat-title" data-i18n="commands.cat.utilities">🛠️ Utilities</h3>
       <div class="cmd-cards">
         <div class="cmd-card">
-          <div class="cmd-name">/equalizer</div>
-          <div class="cmd-desc" data-i18n="cmd.equalizer.desc">Passt den Equalizer für personalisierten Sound an</div>
-          <div class="cmd-params" data-i18n-html="cmd.equalizer.params"><span class="param">preset</span> – bass / treble / flat / pop / rock</div>
+          <div class="cmd-name">/queue</div>
+          <div class="cmd-desc" data-i18n="cmd.queue.desc">Zeigt die aktuelle Song-Warteschlange an</div>
         </div>
         <div class="cmd-card">
-          <div class="cmd-name">/recommended</div>
-          <div class="cmd-desc" data-i18n="cmd.recommended.desc">Gibt Song-Empfehlungen basierend auf dem aktuellen Song</div>
+          <div class="cmd-name">/clear</div>
+          <div class="cmd-desc" data-i18n="cmd.clear.desc">Leert die gesamte Warteschlange</div>
         </div>
         <div class="cmd-card">
-          <div class="cmd-name">/disconnect</div>
-          <div class="cmd-desc" data-i18n="cmd.disconnect.desc">Trennt den Bot vom Voice-Channel</div>
+          <div class="cmd-name">/remove</div>
+          <div class="cmd-desc" data-i18n="cmd.remove.desc">Entfernt einen Song aus der Warteschlange</div>
+          <div class="cmd-params" data-i18n-html="cmd.remove.params"><span class="param">index</span> – Position in der Queue</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/lyrics</div>
+          <div class="cmd-desc" data-i18n="cmd.lyrics.desc">Zeigt den Songtext des aktuell gespielten Songs an</div>
         </div>
         <div class="cmd-card">
           <div class="cmd-name">/ping</div>
