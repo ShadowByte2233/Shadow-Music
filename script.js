@@ -160,6 +160,17 @@ const translations = {
     "nav.pages": "Seiten",
     // Footer
     "footer.copyright": "© 2026 Shadow Music",
+    // Support section
+    "support.title": "Support benötigt?",
+    "support.intro": "Öffne ein Ticket auf unserem Discord",
+    "support.detail": "Brauchst du Hilfe? Nutze das Widget unten, um ein Ticket zu öffnen, oder tritt unserem Support-Server bei.",
+    "support.join": "Support Server öffnen",
+    // Featured commands section
+    "featured.title": "⭐ Featured Commands",
+    "featured.intro": "Eine Auswahl unserer beliebtesten Commands.",
+    "featured.listen": "Reagiert auf Discord Voice Messages und spielt sie ab",
+    "featured.recommended": "Gibt Song-Empfehlungen basierend auf dem aktuellen Song",
+    "featured.shuffle": "Mischt die Warteschlange zufällig durch",
   },
   en: {
     // Navigation
@@ -316,6 +327,17 @@ const translations = {
     "nav.pages": "Pages",
     // Footer
     "footer.copyright": "© 2026 Shadow Music",
+    // Support section
+    "support.title": "Need Support?",
+    "support.intro": "Here is our Discord to open a ticket",
+    "support.detail": "Need help? Use the widget below to open a ticket or join our support server for live assistance.",
+    "support.join": "Open Support Server",
+    // Featured commands section
+    "featured.title": "⭐ Featured Commands",
+    "featured.intro": "A selection of our most popular commands.",
+    "featured.listen": "Responds to Discord Voice Messages and plays them",
+    "featured.recommended": "Provides song recommendations based on the current song",
+    "featured.shuffle": "Shuffles the queue randomly",
   }
 };
 
