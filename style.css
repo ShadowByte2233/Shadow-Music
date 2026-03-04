@@ -915,3 +915,58 @@ footer .social a:hover {
 }
 .bot-status.online  { color: #43b581; background: rgba(67,181,129,0.15); border: 1px solid rgba(67,181,129,0.4); }
 .bot-status.offline { color: #f04747; background: rgba(240,71,71,0.12);  border: 1px solid rgba(240,71,71,0.35); }
+
+/* ============================================================
+   TEST-PHASE MODAL
+   ============================================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 1rem;
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+.modal-box {
+  background: #1a1a2e;
+  border: 1px solid rgba(114, 137, 218, 0.45);
+  border-radius: 14px;
+  box-shadow: 0 0 30px rgba(114, 137, 218, 0.45), 0 0 60px rgba(153, 169, 255, 0.2);
+  padding: 2rem 2.25rem;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  color: #e0e0e0;
+}
+
+.modal-box h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 10px #7289da, 0 0 20px #99a9ff;
+  margin-bottom: 1rem;
+}
+
+.modal-box p {
+  font-size: 0.97rem;
+  line-height: 1.65;
+  color: #c9cdd8;
+  margin-bottom: 1.5rem;
+}
+
+.modal-ok-btn {
+  min-width: 100px;
+}
+
+@media (max-width: 480px) {
+  .modal-box {
+    padding: 1.5rem 1.25rem;
+  }
+}
