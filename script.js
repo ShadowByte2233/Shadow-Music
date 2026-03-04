@@ -100,6 +100,10 @@ const translations = {
     "stats.label": "Server nutzen Shadow Music",
     "stats.vote": "Vote auf top.gg",
     "stats.widgetVote": "Vote für Shadow Music auf top.gg!",
+    "stats.members": "Mitglieder",
+    "stats.status":  "Bot Status",
+    "stats.online":  "🟢 Online",
+    "stats.offline": "🔴 Offline",
     // CTA
     "cta.title": "Jetzt Shadow Music einladen",
     "cta.invite": "Bot einladen",
@@ -267,6 +271,10 @@ const translations = {
     "stats.live": "Live",
     "stats.label": "Servers use Shadow Music",
     "stats.vote": "Vote on top.gg",
+    "stats.members": "Members",
+    "stats.status":  "Bot Status",
+    "stats.online":  "🟢 Online",
+    "stats.offline": "🔴 Offline",
     // CTA
     "cta.title": "Invite Shadow Music Now",
     "cta.invite": "Invite Bot",
@@ -509,7 +517,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ------------------------------------------------------------------
      SERVER COUNT – top.gg API with count-up animation
   ------------------------------------------------------------------ */
-  fetchServerCount();
+  fetchBotStats();
 });
 
 /* ==============================================================
@@ -535,32 +543,55 @@ function countUp(el, target, duration, suffix) {
 }
 
 /* ==============================================================
-   FETCH SERVER COUNT FROM top.gg
+   FETCH BOT STATS FROM SHADOW MUSIC API
    ============================================================== */
 /**
- * Attempts to fetch the live server count from the top.gg API.
- * Falls back to a static placeholder if the API is unreachable (e.g. CORS / no API key).
+ * Fetches live bot stats (servers, members, online status) from the
+ * Shadow Music Node.js bot API at /api/stats.
+ *
+ * Falls back to static placeholders if the API is unreachable.
+ *
+ * Configure BOT_API_URL to point at wherever the bot is hosted:
+ *   - Local dev:   'http://localhost:3000'
+ *   - Production:  'https://your-bot-host.example.com'
  */
-function fetchServerCount() {
-  const el = document.getElementById('server-count');
-  if (!el) return;
+function fetchBotStats() {
+  // ⚠️ Change this URL to your deployed bot's address in production
+  const BOT_API_URL = 'https://your-bot-host.example.com';   // TODO: update for production
 
-  const BOT_ID = '1471191946025242786';
-  const FALLBACK_COUNT = 500;
+  const serverEl  = document.getElementById('server-count');
+  const memberEl  = document.getElementById('member-count');
+  const statusEl  = document.getElementById('bot-status');
 
-  fetch('https://top.gg/api/bots/' + BOT_ID + '/stats')
-    .then(function(res) {
+  const FALLBACK_SERVERS = 500;
+  const FALLBACK_MEMBERS = 10000;
+
+  function setStatus(online) {
+    if (!statusEl) return;
+    const lang = localStorage.getItem('shadow-music-lang') || 'de';
+    statusEl.textContent = online ? translations[lang]['stats.online'] : translations[lang]['stats.offline'];
+    statusEl.className   = 'bot-status ' + (online ? 'online' : 'offline');
+  }
+
+  fetch(BOT_API_URL + '/api/stats')
+    .then(function (res) {
       if (!res.ok) throw new Error('HTTP ' + res.status);
       return res.json();
     })
-    .then(function(data) {
-      const count = (data && data.server_count) ? data.server_count : FALLBACK_COUNT;
-      console.log('[Shadow Music] Server count from top.gg: ' + count);
-      countUp(el, count, 2000);
+    .then(function (data) {
+      const servers = (data && data.servers)  ? data.servers  : FALLBACK_SERVERS;
+      const members = (data && data.members)  ? data.members  : FALLBACK_MEMBERS;
+      const online  = !!(data && data.online);
+      console.log('[Shadow Music] Bot stats:', data);
+      if (serverEl) countUp(serverEl, servers, 2000);
+      if (memberEl) countUp(memberEl, members, 2000);
+      setStatus(online);
     })
-    .catch(function(err) {
-      console.log('[Shadow Music] top.gg API not reachable, using fallback. (' + err.message + ')');
-      countUp(el, FALLBACK_COUNT, 1500, '+');
+    .catch(function (err) {
+      console.warn('[Shadow Music] Bot API not reachable, using fallback. (' + err.message + ')');
+      if (serverEl) countUp(serverEl, FALLBACK_SERVERS, 1500, '+');
+      if (memberEl) countUp(memberEl, FALLBACK_MEMBERS, 1500, '+');
+      setStatus(false);
     });
 }
 
