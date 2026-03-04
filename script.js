@@ -175,6 +175,10 @@ const translations = {
     "featured.listen": "Reagiert auf Discord Voice Messages und spielt sie ab",
     "featured.recommended": "Gibt Song-Empfehlungen basierend auf dem aktuellen Song",
     "featured.shuffle": "Mischt die Warteschlange zufällig durch",
+    // Test-phase modal
+    "modal.testphase.title": "⚠️ Testphase",
+    "modal.testphase.body": "Diese Website befindet sich aktuell in einer Testphase und funktioniert möglicherweise nicht vollständig korrekt. Angezeigte Zahlen (z. B. Server-Statistiken) sind Beispielwerte und entsprechen nicht den tatsächlichen Daten.",
+    "modal.testphase.ok": "OK",
   },
   en: {
     // Navigation
@@ -346,6 +350,10 @@ const translations = {
     "featured.listen": "Responds to Discord Voice Messages and plays them",
     "featured.recommended": "Provides song recommendations based on the current song",
     "featured.shuffle": "Shuffles the queue randomly",
+    // Test-phase modal
+    "modal.testphase.title": "⚠️ Test Phase",
+    "modal.testphase.body": "This website is currently in a test phase and may not function correctly. Displayed numbers (e.g. server stats) are example placeholders and do not reflect actual data.",
+    "modal.testphase.ok": "OK",
   }
 };
 
@@ -518,6 +526,11 @@ document.addEventListener("DOMContentLoaded", () => {
      SERVER COUNT – top.gg API with count-up animation
   ------------------------------------------------------------------ */
   fetchBotStats();
+
+  /* ------------------------------------------------------------------
+     TEST-PHASE MODAL
+  ------------------------------------------------------------------ */
+  showTestPhaseModal();
 });
 
 /* ==============================================================
@@ -595,3 +608,63 @@ function fetchBotStats() {
     });
 }
 
+
+/* ==============================================================
+   TEST-PHASE MODAL
+   ============================================================== */
+/**
+ * Shows the test-phase notice modal on page load.
+ * Uses localStorage to suppress the modal for 24 hours after
+ * the user dismisses it.
+ */
+function showTestPhaseModal() {
+  const STORAGE_KEY = 'shadow-music-testphase-dismissed';
+  const TTL_MS = 24 * 60 * 60 * 1000; // 24 hours
+
+  const stored = localStorage.getItem(STORAGE_KEY);
+  if (stored) {
+    const dismissedAt = parseInt(stored, 10);
+    if (!isNaN(dismissedAt) && Date.now() - dismissedAt < TTL_MS) {
+      return; // still within 24-hour window – do not show
+    }
+  }
+
+  const overlay = document.getElementById('testphase-modal-overlay');
+  if (!overlay) return;
+
+  // Apply translations before showing
+  const lang = localStorage.getItem('shadow-music-lang') || 'de';
+  const t = translations[lang];
+  const titleEl = overlay.querySelector('[data-i18n="modal.testphase.title"]');
+  const bodyEl  = overlay.querySelector('[data-i18n="modal.testphase.body"]');
+  const okBtn   = overlay.querySelector('[data-i18n="modal.testphase.ok"]');
+  if (titleEl) titleEl.textContent = t['modal.testphase.title'];
+  if (bodyEl)  bodyEl.textContent  = t['modal.testphase.body'];
+  if (okBtn)   okBtn.textContent   = t['modal.testphase.ok'];
+
+  overlay.removeAttribute('hidden');
+  if (okBtn) okBtn.focus();
+
+  function keyHandler(e) {
+    if (e.key === 'Escape') dismiss();
+  }
+
+  function dismiss() {
+    localStorage.setItem(STORAGE_KEY, String(Date.now()));
+    overlay.setAttribute('hidden', '');
+    document.removeEventListener('keydown', keyHandler);
+  }
+
+  if (okBtn) {
+    okBtn.addEventListener('click', dismiss, { once: true });
+  }
+
+  // Also allow dismissing by clicking the backdrop (no { once } – clicking
+  // inside the modal box should not consume the listener)
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) dismiss();
+  });
+
+  // Allow dismissing with Escape key
+  document.addEventListener('keydown', keyHandler);
+}
