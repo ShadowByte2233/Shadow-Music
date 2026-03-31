@@ -190,7 +190,7 @@ const translations = {
     "nav.burgerLabel": "Open navigation",
     // Hero
     "hero.slogan": "Your ultimate Discord music bot – everything you need!",
-    "hero.description": "Shadow Music is your powerful Discord music bot featuring a built-in equalizer, playlist import from Spotify, YouTube & SoundCloud, and smart song recommendations. Free, reliable, and always there for you.",
+    "hero.description": "Shadow Music is your powerful Discord music bot featuring a built-in equalizer, playlist import from Spotify, YouTube & SoundCloud, and smart song recommendations. Free, reliable, and recomended.",
     "hero.invite": "Invite Bot",
     "hero.support": "Support Server",
     // Features
