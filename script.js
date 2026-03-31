@@ -14,7 +14,7 @@ const translations = {
     "nav.burgerLabel": "Navigation öffnen",
     // Hero
     "hero.slogan": "Dein ultimativer Discord-Musik-Bot – alles, was du brauchst!",
-    "hero.description": "Shadow Music ist dein leistungsstarker Discord-Musikbot mit Equalizer, Playlist-Import aus Spotify, YouTube & SoundCloud sowie smarter Song-Empfehlungsfunktion. Kostenfrei, zuverlässig und immer für dich da.",
+    "hero.description": "Shadow Music ist dein leistungsstarker Discord-Musikbot mit Equalizer, Playlist-Import aus Spotify, YouTube & SoundCloud sowie smarter Song-Empfehlungsfunktion. Kostenfrei, zuverlässig und Empfehlenswert.",
     "hero.invite": "Bot einladen",
     "hero.support": "Support Server",
     // Features
