@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Scroll Animations (GSAP + ScrollTrigger)</title>
+
+  <!-- ====================== CSS ====================== -->
+  <style>
+    :root {
+      --bg: #0f1220;
+      --surface: #171b2f;
+      --text: #eaf0ff;
+      --muted: #b6bfd8;
+      --accent: #7c9cff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth; /* native smooth scrolling */
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: min(1100px, 92vw);
+      margin-inline: auto;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: -10%;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(124, 156, 255, 0.35), transparent 40%),
+        radial-gradient(circle at 80% 40%, rgba(147, 196, 255, 0.25), transparent 35%),
+        linear-gradient(150deg, #0b1022, #161a34 55%, #11152a);
+      will-change: transform;
+      transform: translateZ(0);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0,.5));
+    }
+
+    .hero h1 {
+      margin: 0 0 .5rem;
+      font-size: clamp(2rem, 6vw, 4.2rem);
+      letter-spacing: .02em;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+    }
+
+    .section {
+      padding: clamp(4rem, 8vw, 7rem) 0;
+      will-change: transform;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      padding: 1.1rem;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(4px);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ====================== HTML ====================== -->
+  <header class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="container hero__content">
+      <h1>Modern Scroll Experience</h1>
+      <p>Smooth, subtle, and performance-friendly animations.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section js-section">
+      <div class="container">
+        <h2 class="reveal">Scroll Reveal Animations</h2>
+        <p class="reveal">Each element animates individually as it enters the viewport.</p>
+        <div class="card-grid">
+          <article class="card reveal">Fade + up motion with <code>gsap.from()</code>.</article>
+          <article class="card reveal">Trigger start point: <code>top 80%</code>.</article>
+          <article class="card reveal">Only subtle movement to avoid visual noise.</article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section js-section">
+      <div class="container">
+        <h2 class="reveal">Section Movement</h2>
+        <p class="reveal">A light parallax-like vertical shift while scrolling through sections.</p>
+      </div>
+    </section>
+
+    <section class="section js-section">
+      <div class="container">
+        <h2 class="reveal">Mobile-Friendly</h2>
+        <p class="reveal">Transform + opacity animations are GPU-friendly and efficient.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- GSAP + ScrollTrigger CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+  <!-- ====================== JS ====================== -->
+  <script>
+    // Register plugin (required)
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero text fade-in on load
+    gsap.from('.hero__content > *', {
+      y: 20,
+      opacity: 0,
+      duration: 0.9,
+      ease: 'power2.out',
+      stagger: 0.12
+    });
+
+    // Subtle hero background parallax
+    gsap.to('.hero__bg', {
+      yPercent: 12,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+
+    // Scroll reveal: each element gets its own trigger
+    document.querySelectorAll('.reveal').forEach((el) => {
+      gsap.from(el, {
+        y: 22,
+        opacity: 0,
+        duration: 0.75,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 80%'
+        }
+      });
+    });
+
+    // Optional section movement (very subtle)
+    document.querySelectorAll('.js-section').forEach((section) => {
+      gsap.to(section, {
+        y: -20,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+    });
+
+    // Refresh after full load to ensure accurate measurements
+    window.addEventListener('load', () => ScrollTrigger.refresh());
+  </script>
+</body>
+</html>
