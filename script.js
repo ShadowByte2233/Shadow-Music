@@ -477,39 +477,60 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ------------------------------------------------------------------
-     SCROLL-REVEAL via IntersectionObserver
+     GSAP + ScrollTrigger: reveal, hero parallax, section movement
   ------------------------------------------------------------------ */
-  const revealSelectors = ".card, .cmd-card, .cmd-category, .contact-card, .reveal";
-  const revealElements = document.querySelectorAll(revealSelectors);
+  const hasReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (window.gsap && window.ScrollTrigger && !hasReducedMotion) {
+    gsap.registerPlugin(ScrollTrigger);
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
+    gsap.from(".hero-content > *", {
+      y: 20,
+      opacity: 0,
+      duration: 0.9,
+      ease: "power2.out",
+      stagger: 0.12
+    });
+
+    gsap.to("#hero", {
+      backgroundPositionY: "60%",
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: true
       }
     });
-  }, { threshold: 0.1 });
 
-  revealElements.forEach(el => observer.observe(el));
-
-  /* ------------------------------------------------------------------
-     PARALLAX effect on hero banner
-  ------------------------------------------------------------------ */
-  const hero = document.getElementById("hero");
-  let ticking = false;
-  window.addEventListener("scroll", () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        if (hero) {
-          const offset = window.scrollY;
-          hero.style.backgroundPositionY = `calc(50% + ${offset * 0.3}px)`;
+    const revealElements = document.querySelectorAll(".card, .cmd-card, .cmd-category, .contact-card, .reveal");
+    revealElements.forEach((el) => {
+      gsap.from(el, {
+        y: 22,
+        opacity: 0,
+        duration: 0.75,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 80%"
         }
-        ticking = false;
       });
-      ticking = true;
-    }
-  }, { passive: true });
+    });
+
+    document.querySelectorAll("section").forEach((section) => {
+      gsap.to(section, {
+        y: -16,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+    });
+
+    window.addEventListener("load", () => ScrollTrigger.refresh());
+  }
 
   /* ------------------------------------------------------------------
      Dynamic feature – uses the active translation
